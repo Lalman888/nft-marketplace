@@ -1,2 +1,1 @@
-# nft-marketplace
-nft marketplace
+# Welcome to the NFT MARKETPLACE

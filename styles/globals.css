@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Nunito';
+  }
+  .gr-text{
+    background: #CD02D6;
+background: linear-gradient(to right, #CD02D6 33%, #3C447A 69%);
+ background-clip: text;
+
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+  }
+}

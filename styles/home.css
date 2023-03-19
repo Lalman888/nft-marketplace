@@ -1,0 +1,8 @@
+.before_login{
+    background-image:  url('../public/nfthome.png');
+    background-position: 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* background: #0D0F1B; */
+}
