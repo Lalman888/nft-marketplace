@@ -6,6 +6,7 @@ import {
 } from "../const/addresses";
 import { ThirdwebNftMedia, useContract, useValidDirectListings, useValidEnglishAuctions } from "@thirdweb-dev/react";
 import { Box, Flex, Skeleton, Text } from "@chakra-ui/react";
+import Image from "next/image";
 
 type Props = {
     nft: NFT;
@@ -28,11 +29,19 @@ export default function NFTComponent({ nft }: Props) {
         });
 
     return (
-        <Flex direction={"column"} backgroundColor={"#EEE"} justifyContent={"center"} padding={"2.5"} borderRadius={"6px"} borderColor={"lightgray"} borderWidth={1}>
+        <Flex direction={"column"} margin={"1"} backgroundColor={"#EEE"} justifyContent={"center"} padding={"2.5"} borderRadius={"6px"} borderColor={"lightgray"} borderWidth={1}
+            _hover={{ cursor: "pointer",margin: "0", border: "2px solid #000",transition: "all 0.2s ease-in-out" }}
+        >
             <Box borderRadius={"4px"} overflow={"hidden"}>
-                <ThirdwebNftMedia metadata={nft.metadata} height={"100%"} width={"100%"} />
+                {/* <ThirdwebNftMedia metadata={nft.metadata} height={"100%"} width={"100%"} /> */}
+                <Image
+                    src={nft.metadata.image || "/place.png"}
+                    alt={nft.metadata.name + " image"}
+                    width={255}
+                    height={255}
+                />
             </Box>
-            <Text fontSize={"small"} color={"darkgray"}>Token ID #{nft.metadata.id}</Text>
+            <Text fontSize={"small"} color={"darkgray"}>Token ID #{parseInt(nft.metadata.id)+1}</Text>
             <Text fontWeight={"bold"}>{nft.metadata.name}</Text>
 
             <Box>

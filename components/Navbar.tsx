@@ -1,12 +1,19 @@
 import { Avatar, Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import NextLink from 'next/link';
+import React,{useEffect,useState} from "react";
 
 export function Navbar() {
+    const [addressCheck, setAddress] = useState<String>();
     const address = useAddress();
+    useEffect(() => {
+        if (address) {
+            setAddress(address);
+        }
+    }, [address]);
 
     return (
-        <Box maxW={"1200px"} m={"auto"} py={"10px"}px={"40px"}>
+        <Box maxW={"1340px"} m={"auto"} py={"10px"}px={"40px"}>
             <Flex justifyContent={"space-between"} alignItems={"center"}>
                 <Link as={NextLink} href='/'>
                     <Heading>Marketplace</Heading>
@@ -21,7 +28,7 @@ export function Navbar() {
                 </Flex>
                 <Flex dir={"row"} alignItems={"center"}>
                     <ConnectWallet/>
-                    {address && (
+                    {addressCheck && (
                         <Link as={NextLink} href={`/profile/${address}`}>
                             <Avatar src='https://bit.ly/broken-link' ml={"20px"}/>
                         </Link>

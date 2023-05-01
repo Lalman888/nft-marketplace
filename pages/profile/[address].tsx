@@ -4,6 +4,7 @@ import React from "react";
 import { MARKETPLACE_ADDRESS, NFT_COLLECTION_ADDRESS } from "../../const/addresses";
 import { useRouter } from "next/router";
 import NFTGrid from "../../components/NFTGrid";
+import Profile from "../../components/Profile";
 
 export default function ProfilePage() {
     const router = useRouter();
@@ -18,6 +19,10 @@ export default function ProfilePage() {
         console.log(ownedNfts);
     return (
         <Container maxW={"1200px"} p={5}>
+           <div style={{paddingTop: '1rem',paddingBottom: '1rem'}}>
+               {/* <Profile/> */}
+           </div>
+
             <Heading>{"Owned NFT(s)"}</Heading>
             <Text>Browse and manage your NFTs from this collection.</Text>
             <NFTGrid 

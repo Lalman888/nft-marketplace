@@ -3,6 +3,7 @@ import { ThirdwebProvider } from "@thirdweb-dev/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import "../styles/globals.css";
 import { Navbar } from "../components/Navbar";
+import Footer from "../components/Footer";
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ChakraProvider>
         <Navbar />
         <Component {...pageProps} />
+        <Footer/>
       </ChakraProvider>
     </ThirdwebProvider>
   );
