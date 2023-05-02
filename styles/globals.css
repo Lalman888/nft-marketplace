@@ -22,3 +22,33 @@ body {
   color: #e7e8e8;
   background: #0f1318;
 }
+
+button.chat_bot {
+  background: #86d7ff;
+  padding: 1.5rem;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 5rem;
+  right: 2.6%;
+  z-index: 9999;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.chat_bot:hover {
+  background: #5db4dd;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.chat_bot > svg {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.chat_bot_container {
+  position: fixed;
+  bottom: 5rem;
+  right: 7%;
+  z-index: 9999;
+}
+/* .chat_bot_container {
+  /* border: 1px solid black; */
+  /* border-radius: 10px; */
+

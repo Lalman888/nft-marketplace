@@ -2,6 +2,7 @@ import NextLink from 'next/link'
 import type { NextPage } from "next";
 import { Button, Container, Flex, Heading, Image, Stack } from '@chakra-ui/react';
 import HomePage from './view';
+import Chat from '../components/Chat';
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
     //   </Flex>
     // </Container> */}
     <HomePage/>
+    <Chat/>
     </>
   );
 };
