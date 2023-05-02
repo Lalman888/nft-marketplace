@@ -4,17 +4,17 @@ const Footer = () => {
   return (
     <Box bg="gray.200" py={8}>
       <Flex justify="center" align="center">
-        <Link href="#">
+        <Link href="/about">
           <Text fontSize="lg" fontWeight="bold" mr={4}>
             About Us
           </Text>
         </Link>
-        <Link href="#">
+        <Link href="/contact">
           <Text fontSize="lg" fontWeight="bold" mr={4}>
             Contact Us
           </Text>
         </Link>
-        <Link href="#">
+        <Link href="/privacy">
           <Text fontSize="lg" fontWeight="bold">
             Privacy Policy
           </Text>

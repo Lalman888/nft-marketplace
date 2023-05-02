@@ -2,8 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Box, Button, Container, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import Link from 'next/link';
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <Box bg="gray.50">
       <Head>
@@ -22,12 +23,17 @@ const Home: NextPage = () => {
               <Text fontSize="xl" mb={8}>
                 My NFT Marketplace is the premier platform for buying, selling, and discovering unique NFTs. From art and music to sports and gaming, there{"'"}s something for everyone on our marketplace.
               </Text>
-              <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" size="lg">
-                Start Exploring
+              <Link
+                href="/buy"
+                passHref
+              >
+                <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" size="lg">
+                Shop Now
               </Button>
+              </Link>
             </Box>
             <Box flex="1" textAlign="center">
-              <Image src="/landing-page.png" alt="Landing Page Image" />
+              <Image src="/hero.png" alt="Landing Page Image" />
             </Box>
           </Flex>
         </Container>
@@ -40,7 +46,7 @@ const Home: NextPage = () => {
           </Heading>
           <SimpleGrid columns={[1, 2, 3]} spacing={8}>
             <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
-              <Image src="/nft1.png" alt="NFT 1" />
+              <Image src="/8.png" height={300} width={'100%'} alt="NFT 1" />
               <Box p={4}>
                 <Heading size="md" mb={2}>
                   NFT Title
@@ -54,7 +60,7 @@ const Home: NextPage = () => {
               </Box>
             </Box>
             <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
-              <Image src="/nft2.png" alt="NFT 2" />
+              <Image src="/12.png" height={300} width={'100%'} alt="NFT 1" />
               <Box p={4}>
                 <Heading size="md" mb={2}>
                   NFT Title
@@ -62,25 +68,27 @@ const Home: NextPage = () => {
                 <Text fontSize="sm" mb={4}>
                   By Artist Name
                 </Text>
-                </Box>
-          <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" size="sm">
-            View Details
-          </Button>
-        </Box>
-        <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
-          <Image src="/nft3.png" alt="NFT 3" />
-          <Box p={4}>
-            <Heading size="md" mb={2}>
-              NFT Title
-            </Heading>
-            <Text fontSize="sm" mb={4}>
-              By Artist Name
-            </Text>
-            <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" size="sm">
-              View Details
-            </Button>
-          </Box>
-        </Box>
+                <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" size="sm">
+                  View Details
+                </Button>
+              </Box>
+            </Box>
+            <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
+              <Image src="/22.png" height={300} width={'100%'} alt="NFT 1" />
+              <Box p={4}>
+                <Heading size="md" mb={2}>
+                  NFT Title
+                </Heading>
+                <Text fontSize="sm" mb={4}>
+                  By Artist Name
+                </Text>
+                <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" size="sm">
+                  View Details
+                </Button>
+              </Box>
+            </Box>
+            
+        
       </SimpleGrid>
     </Container>
   </Box>
@@ -91,45 +99,45 @@ const Home: NextPage = () => {
         How it Works
       </Heading>
       <SimpleGrid columns={[1, 2, 3]} spacing={8}>
-        <Box>
-          <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
-            <Image src="/create-nft.png" alt="Create NFT" />
-            <Box p={4}>
-              <Heading size="md" mb={2}>
-                Create an NFT
-              </Heading>
-              <Text fontSize="sm" mb={4}>
-                Sign up and create a new NFT with our easy-to-use creator tool.
-              </Text>
-            </Box>
-          </Box>
-        </Box>
-        <Box>
-          <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
-            <Image src="/list-nft.png" alt="List NFT" />
-            <Box p={4}>
-              <Heading size="md" mb={2}>
-                List Your NFT
-              </Heading>
-              <Text fontSize="sm" mb={4}>
-                Once you ve created your NFT, list it for sale on our marketplace.
-              </Text>
-            </Box>
-          </Box>
-        </Box>
-        <Box>
-          <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
-            <Image src="/sell-nft.png" alt="Sell NFT" />
-            <Box p={4}>
-              <Heading size="md" mb={2}>
-                Sell Your NFT
-              </Heading>
-              <Text fontSize="sm" mb={4}>
-                When someone buys your NFT, you ll receive payment directly to your connected wallet.
-              </Text>
-            </Box>
-          </Box>
-        </Box>
+
+      <Box>
+  <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
+    <Box p={8}>
+      <Heading size="lg" mb={4}>
+        Create an NFT
+      </Heading>
+      <Text fontSize="xl" mb={4}>
+        Sign up and create a new NFT with our<br/> easy-to-use creator tool.
+      </Text>
+    </Box>
+  </Box>
+</Box>
+<Box>
+  <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
+    <Box p={8}>
+      <Heading size="lg" mb={4}>
+        List Your NFT
+      </Heading>
+      <Text fontSize="xl" mb={4}>
+        Once you{"'"}ve created your NFT, list it for sale on our marketplace.
+      </Text>
+    </Box>
+  </Box>
+</Box>
+<Box>
+  <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
+    <Box p={8}>
+      <Heading size="lg" mb={4}>
+        Sell Your NFT
+      </Heading>
+      <Text fontSize="xl" mb={4}>
+        When someone buys your NFT, you{"'"}ll receive payment directly to your connected wallet.
+      </Text>
+    </Box>
+  </Box>
+</Box>
+  
+      
       </SimpleGrid>
     </Container>
   </Box>
@@ -142,7 +150,7 @@ const Home: NextPage = () => {
       <SimpleGrid columns={[1, 2, 2]} spacing={8}>
         <Box>
           <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
-            <Image src="/email.png" alt="Email" />
+            <Image src="/mail.png" pl='2' width={100} height={100} alt="Email" />
             <Box p={4}>
               <Heading size="md" mb={2}>
                 Email Us
@@ -158,7 +166,7 @@ const Home: NextPage = () => {
         </Box>
         <Box>
           <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
-            <Image src="/twitter.png" alt="Twitter" />
+            <Image src="/twitter.png" width={100} height={100} pl='2' alt="Twitter" />
             <Box p={4}>
               <Heading size="md" mb={2}>
                 Follow Us on Twitter
@@ -180,4 +188,4 @@ const Home: NextPage = () => {
 );
 };
 
-export default Home;
+export default HomePage;
