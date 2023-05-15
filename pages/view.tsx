@@ -3,9 +3,12 @@ import Head from 'next/head'
 import { Box, Button, Container, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const HomePage: NextPage = () => {
+  const MotionBox = motion(Box);
   return (
+    <MotionBox initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
     <Box bg="gray.50">
       <Head>
         <title>My NFT Marketplace</title>
@@ -16,7 +19,11 @@ const HomePage: NextPage = () => {
       <Box bg="white" py={16}>
         <Container maxW="container.xl">
           <Flex flexDirection={['column', 'column', 'row']} alignItems="center" justifyContent="space-between">
-            <Box flex="1" mb={[8, 8, 0]} pr={[0, 0, 16]}>
+            <MotionBox
+            initial={{ opacity: 0.4, x: -100  }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 2 }} 
+            flex="1" mb={[8, 8, 0]} pr={[0, 0, 16]}>
               <Heading size="2xl" mb={8}>
                 Buy, sell and discover unique NFTs
               </Heading>
@@ -31,10 +38,13 @@ const HomePage: NextPage = () => {
                 Shop Now
               </Button>
               </Link>
-            </Box>
-            <Box flex="1" textAlign="center">
+            </MotionBox>
+            <MotionBox
+            initial={{ opacity: 0.4, x: 100  }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 2 }} flex="1" textAlign="center">
               <Image src="/hero.png" alt="Landing Page Image" />
-            </Box>
+            </MotionBox>
           </Flex>
         </Container>
       </Box>
@@ -45,7 +55,7 @@ const HomePage: NextPage = () => {
             Featured NFTs
           </Heading>
           <SimpleGrid columns={[1, 2, 3]} spacing={8}>
-            <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
+            <MotionBox whileHover={{ scale: 1.05 }} borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
               <Image src="/8.png" height={300} width={'100%'} alt="NFT 1" />
               <Box p={4}>
                 <Heading size="md" mb={2}>
@@ -58,7 +68,7 @@ const HomePage: NextPage = () => {
                   View Details
                 </Button>
               </Box>
-            </Box>
+            </MotionBox>
             <Box borderWidth="1px" borderRadius="lg" overflow="hidden" shadow="md">
               <Image src="/12.png" height={300} width={'100%'} alt="NFT 1" />
               <Box p={4}>
@@ -184,6 +194,7 @@ const HomePage: NextPage = () => {
     </Container>
   </Box>
   </Box>
+  </MotionBox>
 
 );
 };

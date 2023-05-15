@@ -1,10 +1,10 @@
 // in config.js
 import { createChatBotMessage } from 'react-chatbot-kit';
 
-const botName = 'NFT MarketPlace Bot';
+const botName = 'NFT MarketPlace Bot, You can ask sell ,faq , help etc.';
 
 const config = {
-  initialMessages: [createChatBotMessage(`Hi! I'm ${botName}`)],
+  initialMessages: [createChatBotMessage(`Hi! I'm ${botName}`,{})],
   botName: botName,
   customStyles: {
     botMessageBox: {

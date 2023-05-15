@@ -28,7 +28,7 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
             tokenContract: NFT_COLLECTION_ADDRESS, 
             tokenId: nft.metadata.id,
         });
-
+    console.log(directListing, ' directListing');
     //Add these for auction section
     const [bidValue, setBidValue] = useState<string>();
 
@@ -106,9 +106,9 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
                         ([key, value]) => (
                             <Flex key={key} direction={"column"} alignItems={"center"} justifyContent={"center"} borderWidth={1} p={"8px"} borderRadius={"4px"}>
                                 {/*  eslint-disable-next-line padded-blocks  */}
-                                <Text fontSize={"small"}>{value.trait_type as string}</Text>
+                                <Text fontSize={"small"}>{(value as { trait_type: string }).trait_type}</Text>
                                 {/*  eslint-disable-next-line padded-blocks  */}
-                                <Text fontSize={"small"} fontWeight={"bold"}>{value.value as string}</Text>
+                                <Text fontSize={"small"} fontWeight={"bold"}>{(value as { value: string }).value}</Text>
                             </Flex>
                         )
                         )}

@@ -39,15 +39,15 @@ export default function SaleInfo({ nft }: Props) {
     async function checkAndProvideApproval() {
         const hasApproval = await nftCollection?.call(
             "isApprovedForAll",
-            nft.owner,
-            MARKETPLACE_ADDRESS
+            [nft.owner,
+            MARKETPLACE_ADDRESS]
         );
 
         if (!hasApproval) {
             const txResult = await nftCollection?.call(
                 "setApprovalForAll",
-                MARKETPLACE_ADDRESS,
-                true
+                [MARKETPLACE_ADDRESS,
+                true]
             );
 
             if (txResult) {
@@ -77,6 +77,7 @@ export default function SaleInfo({ nft }: Props) {
             startTimestamp: new Date(data.startDate),
             endTimestamp: new Date(data.endDate),
         });
+        // console.log(txResult, ' d');
 
         return txResult;
     }
@@ -107,7 +108,7 @@ export default function SaleInfo({ nft }: Props) {
             startTimestamp: new Date(data.startDate),
             endTimestamp: new Date(data.endDate),
         });
-
+        console.log (txResult, ' auc');
         return txResult;
     }
 
@@ -147,12 +148,14 @@ export default function SaleInfo({ nft }: Props) {
                             />
                         </Box>
                         <Web3Button
-                            contractAddress={MARKETPLACE_ADDRESS}
+                            contractAddress={NFT_COLLECTION_ADDRESS}
                             action={async () => {
                                 await handleSubmitDirect(handleSubmissionDirect)();
                             }}
                             onSuccess={(txResult) => {
-                                router.push(`/token/${NFT_COLLECTION_ADDRESS}/${nft.metadata.id}`);
+                                console.log(txResult, ' dir');
+                                router.push(`/token/${NFT_COLLECTION_ADDRESS}/${nft.metadata.id}`,
+                                );
                             }}
                         >Create Direct Listing</Web3Button>
                     </Stack>
