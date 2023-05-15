@@ -54,15 +54,15 @@ type FormData = {
 
 export default function ProfilePage({ apiEndpoint }: Props) {
   const router = useRouter();
-  const addlocal = localStorage.getItem("collectionAddress");
-  const { contract: nftCollection } = useContract(addlocal ? addlocal : NFT_COLLECTION_ADDRESS);
+  // const addlocal = localStorage.getItem("collectionAddress");
+  const { contract: nftCollection } = useContract( NFT_COLLECTION_ADDRESS);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [name, setName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [images, setImage] = useState<string>("");
   const [imagefile, setImageFile] = useState<File>();
-  console.log('nft data ',name, description, imagefile)
+  // console.log('nft data ',name, description, imagefile)
   const { contract: marketplace } = useContract(
     MARKETPLACE_ADDRESS,
     "marketplace-v3"
@@ -72,7 +72,7 @@ export default function ProfilePage({ apiEndpoint }: Props) {
     nftCollection,
     router.query.address as string
   );
-    console.log(ownedNfts);
+    // console.log(ownedNfts);
   const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0] as File;
     setImageFile(file);
@@ -175,7 +175,7 @@ export default function ProfilePage({ apiEndpoint }: Props) {
                       })
                     }
                     onSuccess={(result) => {
-                      console.log("Result", result);
+                      // console.log("Result", result);
                     }
                     }
                   >

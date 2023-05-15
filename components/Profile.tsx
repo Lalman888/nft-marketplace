@@ -14,14 +14,14 @@ const Profile = () => {
       setPreview('')
       localStorage.removeItem('file')
     }
-    console.log(file, '', preview)
+    // console.log(file, '', preview)
   }
   
 
   useEffect(() => {
   preview = localStorage.getItem('file') || '';
   setPreview(preview)
-  console.log(preview)
+  // console.log(preview)
   }, [file, preview])
   
   

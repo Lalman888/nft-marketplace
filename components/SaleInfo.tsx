@@ -108,7 +108,7 @@ export default function SaleInfo({ nft }: Props) {
             startTimestamp: new Date(data.startDate),
             endTimestamp: new Date(data.endDate),
         });
-        console.log (txResult, ' auc');
+        // console.log (txResult, ' auc');
         return txResult;
     }
 
@@ -153,7 +153,7 @@ export default function SaleInfo({ nft }: Props) {
                                 await handleSubmitDirect(handleSubmissionDirect)();
                             }}
                             onSuccess={(txResult) => {
-                                console.log(txResult, ' dir');
+                                // console.log(txResult, ' dir');
                                 router.push(`/token/${NFT_COLLECTION_ADDRESS}/${nft.metadata.id}`,
                                 );
                             }}

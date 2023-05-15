@@ -7,7 +7,7 @@ import { useContract, useNFTs } from "@thirdweb-dev/react";
 export default function Buy() {
     const { contract } = useContract(NFT_COLLECTION_ADDRESS);
     const { data, isLoading } = useNFTs(contract);
-    console.log('buy ',data);
+    // console.log('buy ',data);
     const steps = [
         {
           id: '1',

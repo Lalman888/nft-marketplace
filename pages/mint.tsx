@@ -25,8 +25,8 @@ const MintNFT = () => {
             image: "https://bafkreie4zdcentifeqoukitd32lvd3k3kr3y5va7kqfdewd7budjkoanui.ipfs.nftstorage.link/",
             description: "A fruit basket that lives on the Mumbai test network! 🍎🧺",
         }) ;
-        console.log(collectionAddress, "collectionAddress");
-        localStorage.setItem("collectionAddress", collectionAddress);
+        // console.log(collectionAddress, "collectionAddress");
+        // localStorage.setItem("collectionAddress", collectionAddress);
 
         setStatus(`NFT collection created! Collection address: ${collectionAddress}`);
     };

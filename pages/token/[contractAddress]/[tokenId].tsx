@@ -28,7 +28,7 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
             tokenContract: NFT_COLLECTION_ADDRESS, 
             tokenId: nft.metadata.id,
         });
-    console.log(directListing, ' directListing');
+    // console.log(directListing, ' directListing');
     //Add these for auction section
     const [bidValue, setBidValue] = useState<string>();
 
